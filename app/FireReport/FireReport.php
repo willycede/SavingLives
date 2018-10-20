@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Location;
+namespace App\FireReport;
 
 use Illuminate\Database\Eloquent\Model;
 
-class UserLocation extends Model
+class FireReport extends Model
 {
-    protected $table = 'userLocation';
+    protected $table = 'FireReport';
     protected $fillable = [
         'date_time','latitude','longitude','MAC'
     ];
