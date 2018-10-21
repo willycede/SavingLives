@@ -9,6 +9,6 @@ class Notificacion extends Model
     protected $table = 'notification';
     public $timestamps=false;
     protected $fillable = [
-        'MAC','mensaje','fecha','estado'
+       'id', 'MAC','mensaje','fecha','estado'
     ];
 }

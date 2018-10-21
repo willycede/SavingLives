@@ -7,7 +7,7 @@ use App\Notificaciones\Notificacion;
 
 class NotificacionApiController extends Controller
 {
-    public function cargarNotificaciones(Request $requst){
+    public function cargarNotificaciones(Request $request){
     
         set_time_limit(0);
         $request->validate([
@@ -15,7 +15,7 @@ class NotificacionApiController extends Controller
         ]);
         $mac= $request->input('mac'); 
         $notificaciones=Notificacion::where('MAC',$mac)->where('estado','A')->get();
-        return['notificaciones'=>$notificaciones];
+        return['respuesta'=>'true','contenido'=>$notificaciones];
   
     }
 
