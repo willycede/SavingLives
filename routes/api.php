@@ -17,5 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
    
 });
-Route::get('user-location', 'Location\UserLocationApiController@saveLocation');
-Route::get('report-fire', 'FireReport\FireReportApiController@reportarIncendio');
+Route::match(['get','post'],'user-location', 'Location\UserLocationApiController@saveLocation');
+Route::match(['get','post'],'download-data-nasa', 'DataNasa\DataNasaApiController@descargarDatos');
+Route::match(['get','post'],'report-fire', 'FireReport\FireReportApiController@reportarIncendio');
+Route::match(['get','post'],'fire-multimedia', 'Multimedia\MultimediaApiController@cargarMultimedia');
+Route::match(['get','post'],'cargar-notificaciones', 'NotificacionApiController@cargarNotificaciones');
+Route::match(['get','post'],'cargar-datos', 'DataNasa\DataNasaApiController@cargarDatos');
+Route::match(['get','post'],'verificar-incendio', 'FireReport\FireReportApiController@verificarIncendio ');
